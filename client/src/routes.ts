@@ -7,5 +7,6 @@ export const routes ={
     settings:'/settings',
     logout:'/logout',
     notFound:'/404',
-    about:"/about"
+    about:"/about",
+    demo:"/demo"
 }

@@ -1,8 +1,10 @@
-import { CssBaseline } from '@mui/material'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { routes } from './routes'
-import  HomeLayout  from './layout/HomeLayout'
-import {  Login, Dashboard, Profile, About, Register } from "./pages";
+import { CssBaseline } from "@mui/material";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { routes } from "./routes";
+import HomeLayout from "./layout/HomeLayout";
+import { Login, Dashboard, Profile, About, Register } from "./pages";
+import Demo from "./demo/Demo";
+import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 
 const router = createBrowserRouter([
   {
@@ -11,32 +13,39 @@ const router = createBrowserRouter([
     children: [
       {
         path: routes.login,
-        element: <Login />
-      }
-      , {
+        element: <Login />,
+      },
+      {
         path: routes.dashboard,
-        element: <Dashboard />
-      }, {
+        element: <Dashboard />,
+      },
+      {
         path: routes.profile,
-        element: <Profile />
-      }, {
+        element: <Profile />,
+      },
+      {
         path: routes.about,
-        element: <About />
-      }, {
+        element: <About />,
+      },
+      {
         path: routes.register,
-        element: <Register />
-      }
-    ]
-  }
-])
+        element: <Register />,
+      },
+      {
+        path: routes.demo,
+        element: <Demo />,
+      },
+    ],
+  },
+]);
 
 function App() {
   return (
-    <div className="App">
+    <ErrorBoundary>
       <CssBaseline />
       <RouterProvider router={router} />
-    </div>
-  )
+    </ErrorBoundary>
+  );
 }
 
-export default App
+export default App;
