@@ -5,11 +5,13 @@ import HomeLayout from "./layout/HomeLayout";
 import { Login, Dashboard, Profile, About, Register } from "./pages";
 import Demo from "./demo/Demo";
 import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
+import LandingPage from "./pages/LandingPage/LandingPage";
 
 const router = createBrowserRouter([
   {
     path: routes.home,
     element: <HomeLayout />,
+
     children: [
       {
         path: routes.login,
@@ -35,6 +37,10 @@ const router = createBrowserRouter([
         path: routes.demo,
         element: <Demo />,
       },
+      {
+        path: routes.landing,
+        element: <LandingPage />,
+      }
     ],
   },
 ]);

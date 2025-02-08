@@ -1,7 +1,9 @@
-import BuggyComponent from "./BuggyComponent";
+// import BuggyComponent from "./BuggyComponent";
+
+import LandingPage from "../pages/LandingPage/LandingPage";
 
 function Demo() {
-  return <BuggyComponent />;
+  return <LandingPage />;
 }
 
 export default Demo;

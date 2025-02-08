@@ -8,5 +8,6 @@ export const routes ={
     logout:'/logout',
     notFound:'/404',
     about:"/about",
-    demo:"/demo"
+    demo:"/demo",
+    landing:"/landing"
 }
