@@ -40,7 +40,7 @@ const router = createBrowserRouter([
       {
         path: routes.landing,
         element: <LandingPage />,
-      }
+      },
     ],
   },
 ]);
