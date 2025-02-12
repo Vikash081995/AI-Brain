@@ -9,5 +9,6 @@ export const routes ={
     notFound:'/404',
     about:"/about",
     demo:"/demo",
-    landing:"/landing"
+    landing:"/landing",
+    posts:"/posts"
 }

@@ -7,7 +7,11 @@ const NavBar: React.FC = () => {
   return (
     <Toolbar>
       <Box
-        sx={{ flexGrow: 1, display: "flex", justifyContent: "space-between" }}
+        sx={{
+          flexGrow: 1,
+          display: "flex",
+          justifyContent: "space-between",
+        }}
       >
         <Button color="inherit" component={Link} to={routes.home}>
           Home

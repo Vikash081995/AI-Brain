@@ -6,6 +6,7 @@ import { Login, Dashboard, Profile, About, Register } from "./pages";
 import Demo from "./demo/Demo";
 import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 import LandingPage from "./pages/LandingPage/LandingPage";
+import PostsList from "./components/Posts/PostsList";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: routes.landing,
         element: <LandingPage />,
+      },
+      {
+        path: routes.posts,
+        element: <PostsList />,
       },
     ],
   },
