@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
-import { posts } from "../../types/posts";
+import { Post } from "../../types/posts";
 import { selectAllPosts } from "../../slices/postSlice";
 
 function PostsList() {
   const posts = useSelector(selectAllPosts);
 
-  const renderPosts = posts.map((post: posts) => (
+  const renderPosts = posts.map((post: Post) => (
     <article key={post.id}>
       <h3>{post.title}</h3>
       <p>{post.content}</p>

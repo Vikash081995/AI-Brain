@@ -1,21 +1,25 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { posts } from "../types/posts";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { PostState, Post } from "../types/posts";
 import { RootState } from "../store/store";
 
-
-const initialState: posts[] = [
-  { id: "1", title: "learning Redux toolkit" },
-  { id: "2", title: "Slices" },
-];
+const initialState: PostState = {
+  posts: [],
+  loading: false,
+  error: null,
+};
 
 const postSlice = createSlice({
   name: "posts",
   initialState,
-  reducers: {},
+  reducers: {
+    addPost: (state, action: PayloadAction<Post>) => {
+      state.posts.push(action.payload);
+    },
+  },
 });
 
-export const selectAllPosts = (state:RootState)=>state.posts;
+export const { addPost } = postSlice.actions;
+
+export const selectAllPosts = (state: RootState) => state.posts.posts;
 
 export default postSlice.reducer;
-
-

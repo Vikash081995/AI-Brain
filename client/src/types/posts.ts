@@ -1,5 +1,12 @@
-export type posts = {
+export interface Post {
   id: string;
   title: string;
-  content?: string;
-};
+  content: string;
+  createdAt: string;
+}
+
+export interface PostState {
+  posts: Post[];
+  loading: boolean;
+  error: string | null;
+}

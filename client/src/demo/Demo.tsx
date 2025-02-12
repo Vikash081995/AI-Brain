@@ -1,9 +1,11 @@
 // import BuggyComponent from "./BuggyComponent";
 
-import LandingPage from "../pages/LandingPage/LandingPage";
+import AddPostForm from "../components/Posts/AddPostForm";
+
+// import LandingPage from "../pages/LandingPage/LandingPage";
 
 function Demo() {
-  return <LandingPage />;
+  return <AddPostForm />;
 }
 
 export default Demo;
