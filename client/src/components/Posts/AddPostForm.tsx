@@ -16,6 +16,14 @@ function AddPostForm() {
   const [content, setContent] = useState("");
   const [error, setError] = useState("");
 
+  const handleTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTitle(e.target.value);
+  };
+
+  const handleContent = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setContent(e.target.value);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -26,7 +34,6 @@ function AddPostForm() {
 
     if (title && content) {
       dispatch(addPost(title, content));
-
       // Reset form
       setTitle("");
       setContent("");
@@ -47,7 +54,7 @@ function AddPostForm() {
           fullWidth
           label="Title"
           value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          onChange={handleTitle}
           margin="normal"
           variant="outlined"
           placeholder="Enter post title"
@@ -57,7 +64,7 @@ function AddPostForm() {
           fullWidth
           label="Content"
           value={content}
-          onChange={(e) => setContent(e.target.value)}
+          onChange={handleContent}
           margin="normal"
           variant="outlined"
           multiline
