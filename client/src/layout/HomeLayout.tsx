@@ -6,7 +6,10 @@ import { Link } from "react-router-dom";
 function HomeLayout() {
   return (
     <div>
-      <AppBar position="static">
+      <AppBar
+        position="static"
+        sx={{ backgroundColor: "black", height: "8vh" }}
+      >
         <Toolbar>
           <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
             Digital Brain
@@ -25,13 +28,13 @@ function HomeLayout() {
           py={2}
           textAlign={"center"}
           style={{
-            backgroundColor: "#f5f5f5",
+            backgroundColor: "black",
             position: "fixed",
             bottom: "0",
             width: "100%",
           }}
         >
-          <Typography variant="body2" color="textSecondary">
+          <Typography variant="body2" color="white">
             © 2025 Digital Brain. All rights reserved.
           </Typography>
         </Box>
