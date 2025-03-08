@@ -56,7 +56,7 @@ function HeaderBar({ handleDrawerOpen, open }: HeaderBarProps) {
           <MenuIcon />
         </IconButton>
         <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-          Digital Brain
+        AI Brain
         </Link>
         <NavBar />
       </Toolbar>

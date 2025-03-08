@@ -15,7 +15,7 @@ function Footer() {
         }}
       >
         <Typography variant="body2" color="white">
-          © 2025 Digital Brain. All rights reserved.
+          © 2025 AI Brain. All rights reserved.
         </Typography>
       </Box>
     </footer>
