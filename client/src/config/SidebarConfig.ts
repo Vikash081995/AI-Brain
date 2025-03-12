@@ -26,8 +26,7 @@ export const SidebarDrawerConfig: sidebarMenu[] = [
     title: "Finance",
   },
   {
-    id: "content-creation",
-    title: "Content-creation",
+    id: "content",
+    title: "Content",
   },
 ];
-// ["Inbox", "Starred", "Resources", "Para", "Finance", "Content-creation"];
