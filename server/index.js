@@ -1,6 +1,14 @@
 const express = require('express')
 const bodyparser = require('body-parser');
 const placeRoutes = require('./routes/places-routes')
+const mongoose = require('mongoose');
+const connectDB = require('./config/dbConnect');
+
+const PORT = process.env.PORT || 3000;
+
+
+//connect to DB 
+connectDB()
 
 const app = express();
 
@@ -18,8 +26,12 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: 'Something went wrong!' });
 });
 
-// Start server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+mongoose.connection.once('open',()=>{
+  console.log('Cnnected to Mongodb');
+  app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+})
+
+// Start server
