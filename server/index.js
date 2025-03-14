@@ -3,7 +3,13 @@ const bodyparser = require("body-parser");
 const placeRoutes = require("./routes/places-routes");
 const mongoose = require("mongoose");
 const connectDB = require("./config/dbConnect");
+require("dotenv").config();
+const cors = require("cors");
+const helmet = require("helmet");
+const morgan = require("morgan");
 const adminRoutes = require("./routes/admin");
+const taskRoutes = require("./routes/tasks");
+const authRoutes = require("./routes/auth");
 
 const PORT = process.env.PORT || 3000;
 
@@ -13,11 +19,17 @@ connectDB();
 const app = express();
 
 // Middleware
-app.use(bodyparser.json());
-app.use(bodyparser.urlencoded({ extended: true }));
-app.use('/admin',adminRoutes)
+app.use(express.json());
+app.use(cors());
+app.use(helmet());
+app.use(morgan("combined"));
+// app.use(bodyparser.json());
+// app.use(bodyparser.urlencoded({ extended: true }));
+app.use("/admin", adminRoutes);
 // routes
+app.use("/api/auth", authRoutes);
 app.use("/api/v1/places", placeRoutes);
+app.use("/api/v1/tasks", taskRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
